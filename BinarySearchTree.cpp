@@ -60,3 +60,40 @@ void BinarySearchTree::print(string prefix, TreeNode* currentRoot, bool isLeft)
         cout << "nil" << endl;
     }
 }
+
+int BinarySearchTree::Profundidad(TreeNode* Node, TreeNode* CurrentRoot, int contador)
+{
+    
+    if (Node == nullptr) {
+        return -1; //-1 Significa que no hay profundidad 
+    }
+
+    if (Node == CurrentRoot) {
+        return contador;
+    }
+    if (Node->valor < CurrentRoot->valor) {
+        return this->Profundidad(Node, CurrentRoot->left, ++contador);
+    }
+    else {
+        return this->Profundidad(Node, CurrentRoot->right, ++contador);
+    }
+    
+
+
+}
+
+int BinarySearchTree::Altura(TreeNode* Node)
+{
+    if (Node == nullptr) {
+        return -1;
+    }
+    
+
+    if (Node->right == nullptr && Node->left == nullptr) {
+        return 0;
+    }
+
+    return std::max(Altura(Node->left)+1, Altura(Node->right)+1);
+
+
+}

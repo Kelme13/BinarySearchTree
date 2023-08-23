@@ -28,6 +28,12 @@ int main()
 
 	miArbolito.search(miArbolito.root, 15);
 
+	std::cout << "Profundidad: " << miArbolito.Profundidad(miArbolito.root, miArbolito.root, 0) << endl;
+	std::cout << "Profundidad: " << miArbolito.Profundidad(miArbolito.root->left, miArbolito.root, 0) << endl;
+	std::cout << "Profundidad: " << miArbolito.Profundidad(miArbolito.root->right, miArbolito.root, 0) << endl;
+	std::cout << "Profundidad: " << miArbolito.Profundidad(miArbolito.root->right->left, miArbolito.root, 0) << endl;
+	std::cout << "Altura: " << miArbolito.Altura(nullptr) << endl;
+
 	miArbolito.search(miArbolito.root, 100);
 	return 0;
 }
